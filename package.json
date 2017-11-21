@@ -15,5 +15,12 @@
   "bugs": {
     "url": "https://github.com/danielbucket/adventureBuilder/issues"
   },
-  "homepage": "https://github.com/danielbucket/adventureBuilder#readme"
+  "homepage": "https://github.com/danielbucket/adventureBuilder#readme",
+  "dependencies": {
+    "body-parser": "^1.18.2",
+    "express": "^4.16.2",
+    "knex": "^0.14.1",
+    "nodemon": "^1.12.1",
+    "pg": "^7.4.0"
+  }
 }
