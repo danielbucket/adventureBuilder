@@ -1,8 +1,8 @@
 
 exports.seed = (knex, Promise) => {
-  return knex('user_contact').del()
+  return knex('primary_contact_data').del()
     .then( () => {
-      return knex('user_contact').insert([
+      knex('primary_contact_data').insert([
         { id: 1,
           user_name: 'bucket',
           first_name: 'bucket',
@@ -15,7 +15,7 @@ exports.seed = (knex, Promise) => {
           zip: 80401,
           email: 'danieljbucket@gmail.com',
           phone_number: '1234567890'
-        },
-      ]);
-    });
+        }
+    ])
+  })
 };

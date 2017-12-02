@@ -4,7 +4,8 @@
   "description": "Plan out a detailed adventure itinerary",
   "main": "index.js",
   "scripts": {
-    "test": "test"
+    "test": "test",
+    "start": "nodemon server/server"
   },
   "repository": {
     "type": "git",
