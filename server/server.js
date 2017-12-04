@@ -17,19 +17,11 @@ app.get('/', (req,res) => {
 	res.sendFile(path.join(__dirname + '/../public/index.html'))
 })
 
-
-
-
-
 app.get('/adventure_data', (req,res) => {
 	db('adventure_data').select('*')
 	.then(data => res.status(200).json({ data }))
 	.catch(err => res.status(500).json({ err }))
 })
-
-
-
-
 
 app.get('/primary_contact_data', (req,res) => {
 	db('primary_contact_data').select('*')
