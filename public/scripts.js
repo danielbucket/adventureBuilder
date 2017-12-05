@@ -1,6 +1,6 @@
 const getShit = () => {
 
-	fetch('/adventure_data')
+	fetch('/api/v1/adventure_data')
 	.then(res => res.json())
 	.then(data => {
 		console.log(data)
@@ -34,28 +34,27 @@ $('#button').on('click', () => {
 $('#test_button').on('click', () => {
 
 	const entryData = {
-			userName: $('#user_name').val(),
-			first_name: $('#first_name').val(),
-			last_name: $('#last_name').val(),
-			relation: $('#_relation').val(),
-			street_1: $('#street_1').val(),
-			street_2: $('#street_2').val(),
-			city: $('#_city').val(),
-			state: $('#_state').val(),
-			zip: $('#_zip').val(),
-			email: $('#email').val(),
-			phone_number: $('#phone_number').val()
-		}
-	console.log( entryData )
+		userName: $('#user_name').val(),
+		first_name: $('#first_name').val(),
+		last_name: $('#last_name').val(),
+		relation: $('#_relation').val(),
+		street_1: $('#street_1').val(),
+		street_2: $('#street_2').val(),
+		city: $('#_city').val(),
+		state: $('#_state').val(),
+		zip: $('#_zip').val(),
+		email: $('#email').val(),
+		phone_number: $('#phone_number').val()
+	};
 
-	fetch('/postToPrimaryContactData', {
+	fetch('/api/v1/primary_contact_data', {
 		method: 'POST',
 		body: JSON.stringify(entryData),
-		header: "Content-Type": "application/json"
+		header: { "Content-Type": "application/json" }
 	})
 	.then(resp => resp.json())
 	.then(data => {
-
+		console.log('returned: ', data)
 	})
 
 });
